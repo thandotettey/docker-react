@@ -6,7 +6,7 @@ before_install:
   - docker build -t thandotettey/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true thandotettey/docker-react npm run test -- --coverage
+  - docker run --env CI=true thandotettey/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
